@@ -1,19 +1,25 @@
 {
   "name": "LanguageTwit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A twitter bot that tweets random translation sentences in images.",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "nodemon bot.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tweet",
+    "bot",
+    "translator",
+    "translation"
+  ],
+  "author": "Ricardo Magalhães",
   "license": "ISC",
   "dependencies": {
     "jimp": "^0.2.27",
     "lodash": "^4.17.4",
+    "node-env-file": "^0.1.8",
     "twit": "^2.2.5"
   }
 }
