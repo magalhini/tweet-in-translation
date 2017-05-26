@@ -7,6 +7,9 @@ const readJSON = path => new Promise((resolve, reject) => {
   });
 });
 
+const delay = (fn, time) => setTimeout(() => fn, time);
+
 module.exports = {
-  readJSON
+  readJSON,
+  delay
 };
