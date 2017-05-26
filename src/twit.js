@@ -2,7 +2,7 @@ const env = require('node-env-file')
 const twit = require('twit');
 const fs = require('fs');
 
-env('./.env');
+if (process.env.NODE_ENV === 'dev') env('./.env');
 
 const Twitter = new twit({
   consumer_key: process.env.CONSUMER_KEY,
