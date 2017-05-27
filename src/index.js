@@ -51,20 +51,23 @@ const getRandomTranslation = data => new Promise((resolve, reject) =>
 
 const tweetATranslation = () => {
   console.log('About to tweet at', new Date().toString());
-  utils.readJSON('./data/de.json')
+  const lang = 'de';
+  utils.readJSON(`./data/${lang}.json`)
     .then(getRandomTranslation)
     .then(calculateImageSize)
     .then(data => writePicture(data.translation, data.size))
     .then(data => twitter.postWithMedia({
-      buffer: data.buffer,
+      lang,
       path: `./${IMAGE_PATH}`,
       translation: data
     }))
     .catch(err => console.log('Ops, something has gone wrong', err));
 }
 
-console.log(`Starting process at ${process}`);
+console.log(`Starting Twitter Bot 🤖`);
 
 // Kick it off!
-setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
+//setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
 tweetATranslation();
+
+//twitter.deleteAllTweets();

@@ -18,11 +18,23 @@ const postText = data => {
   });
 }
 
-const postWithMedia = data => {
-  console.log('Translation is:', data.translation.translation);
+const deleteTweet = (id) => {
+  return Twitter.post(`statuses/destroy/:id`, { id }, (err, data, response) => {
+    console.log(`Deleted tweet ${id}`, data);
+  });
+}
 
+const deleteAllTweets = (data) => {
+  Twitter.get('statuses/user_timeline', { count: 200 }, (err, data, response) => {
+    const all = data.map(tweet => tweet.id_str);
+    all.forEach((id, idx) => setTimeout(() => deleteTweet(id), idx * 1100))
+  })
+}
+
+const postWithMedia = data => {
   const b64 = fs.readFileSync(data.path, { encoding: 'base64' });
-  const status = data.translation.translation.original;
+  const flag = data.lang === 'de' ? '🇩🇪' : '🇫🇷';
+  const status = `${flag} ${data.translation.translation.original}`;
 
   Twitter.post('media/upload', {
     media_data: b64
@@ -52,5 +64,6 @@ const postWithMedia = data => {
 
 module.exports = {
   postText,
-  postWithMedia
+  postWithMedia,
+  deleteAllTweets,
 };
