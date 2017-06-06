@@ -5,8 +5,13 @@ const twitter = require('./twit');
 const utils = require('./utils');
 
 const PPC = 20; // pixels per characters
-const INTERVAL_SECONDS =  7200;
+const INTERVAL_SECONDS = 7200;
 const IMAGE_PATH = 'media.png'; // image to be created and tweeted
+
+let lastTweet = {
+  original: '',
+  at: null
+};
 
 /**
  * Calculates the width of the image to be created based on the longest
@@ -45,9 +50,17 @@ const writePicture = (translation, size) =>
       })
   });
 
-const getRandomTranslation = data => new Promise((resolve, reject) =>
-  resolve(data[Math.floor(Math.random() * data.length)])
-);
+const getRandomTranslation = data => new Promise((resolve, reject) => {
+  const translation = data[Math.floor(Math.random() * data.length)];
+
+  if (translation.original !== lastTweet.original) {
+    lastTweet.original = translation.original;
+    return resolve(translation);
+  }
+
+  console.log('Tweet is the same, getting a new one...');
+  return getRandomTranslation(data);
+});
 
 const tweetATranslation = () => {
   console.log('About to tweet at', new Date().toString());
@@ -68,6 +81,6 @@ console.log(`Starting Twitter Bot 🤖`);
 
 // Kick it off!
 //setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
-tweetATranslation();
+//tweetATranslation();
 
 //twitter.deleteAllTweets();

@@ -20,15 +20,18 @@ const postText = data => {
 
 const deleteTweet = (id) => {
   return Twitter.post(`statuses/destroy/:id`, { id }, (err, data, response) => {
-    console.log(`Deleted tweet ${id}`, data);
+    console.log(`Deleted tweet ${id}`);
   });
 }
 
 const deleteAllTweets = (data) => {
-  Twitter.get('statuses/user_timeline', { count: 200 }, (err, data, response) => {
-    const all = data.map(tweet => tweet.id_str);
-    all.forEach((id, idx) => setTimeout(() => deleteTweet(id), idx * 1100))
-  })
+  console.log('🎃 WARNING: All tweets will be deleted in 10 seconds...!');
+  setTimeout(() => {
+    Twitter.get('statuses/user_timeline', { count: 200 }, (err, data, response) => {
+      const all = data.map(tweet => tweet.id_str);
+      all.forEach((id, idx) => setTimeout(() => deleteTweet(id), idx * 1100));
+    })
+  }, 10000);
 }
 
 const postWithMedia = data => {
