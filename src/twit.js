@@ -36,7 +36,7 @@ const deleteAllTweets = (data) => {
 
 const postWithMedia = data => {
   const b64 = fs.readFileSync(data.path, { encoding: 'base64' });
-  const flag = data.lang === 'de' ? '🇩🇪' : '🇫🇷';
+  const flag = data.lang.flag;
   const status = `${flag} ${data.translation.translation.original}`;
 
   Twitter.post('media/upload', {

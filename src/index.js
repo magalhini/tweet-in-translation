@@ -3,9 +3,10 @@ const fs = require('fs');
 const Jimp = require('jimp');
 const twitter = require('./twit');
 const utils = require('./utils');
+const languagesMap = require('./languages');
 
-const PPC = 20; // pixels per characters
-const INTERVAL_SECONDS = 7200;
+const PPC = 19; // pixels per characters
+const INTERVAL_SECONDS = 720;
 const IMAGE_PATH = 'media.png'; // image to be created and tweeted
 
 let lastTweet = {
@@ -58,14 +59,19 @@ const getRandomTranslation = data => new Promise((resolve, reject) => {
     return resolve(translation);
   }
 
-  console.log('Tweet is the same, getting a new one...');
-  return getRandomTranslation(data);
+  return tweetATranslation();
 });
+
+const chooseLanguage = () => {
+  const lang = languagesMap[Math.floor(Math.random() * languagesMap.length)];
+  return lang;
+}
 
 const tweetATranslation = () => {
   console.log('About to tweet at', new Date().toString());
-  const lang = 'de';
-  utils.readJSON(`./data/${lang}.json`)
+  const lang = chooseLanguage();
+
+  utils.readJSON(`./data/${lang.filename}`)
     .then(getRandomTranslation)
     .then(calculateImageSize)
     .then(data => writePicture(data.translation, data.size))
@@ -80,7 +86,7 @@ const tweetATranslation = () => {
 console.log(`Starting Twitter Bot 🤖`);
 
 // Kick it off!
-//setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
-//tweetATranslation();
+setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
+tweetATranslation();
 
 //twitter.deleteAllTweets();
