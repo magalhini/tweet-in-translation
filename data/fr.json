@@ -75,7 +75,7 @@
     "translation": "I am hungry, thirsty, and cold."
 },
 {
-    "original": "J’attends mes amis",
+    "original": "J'attends mes amis",
     "translation": "I'm waiting for my friends."
 },
 {
@@ -147,11 +147,11 @@
     "translation": "I'm looking for an ATM machine."
 },
 {
-    "original": "L’addition, s’il vous plaît.",
+    "original": "L'addition, s'il vous plaît.",
     "translation": "The check, please."
 },
 {
-    "original": "A l’aeroport, s’il vous plaît.",
+    "original": "A l'aeroport, s'il vous plaît.",
     "translation": "To the airport, please."
 },
 {
@@ -201,4 +201,19 @@
 {
     "original": "Ce n'est pas ma faute.",
     "translation": "This is not my fault."
+},{
+    "original": "Vingt cinq cents, s'il vous plaît",
+    "translation": "Twenty five cents, please"
+},{
+    "original": "Votre téléphone est tombé au sol.",
+    "translation": "Your phone fell to the ground."
+},{
+    "original": "Peux-tu courrir",
+    "translation": "Can you run?"
+},{
+    "original": "Puis-je avoir de l'eau?",
+    "translation": "Can I have some water?"
+},{
+    "original": "Quatre-vingts sont les nouvelles soixante-dix.",
+    "translation": "Eighty is the new seventy."
 }]

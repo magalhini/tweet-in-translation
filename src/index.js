@@ -6,7 +6,7 @@ const utils = require('./utils');
 const languagesMap = require('./languages');
 
 const PPC = 19; // pixels per characters
-const INTERVAL_SECONDS = 720;
+const INTERVAL_SECONDS = 7200;
 const IMAGE_PATH = 'media.png'; // image to be created and tweeted
 
 let lastTweet = {
@@ -88,5 +88,3 @@ console.log(`Starting Twitter Bot 🤖`);
 // Kick it off!
 setInterval(tweetATranslation, INTERVAL_SECONDS * 1000);
 tweetATranslation();
-
-//twitter.deleteAllTweets();
