@@ -12,7 +12,7 @@
 },
 {
     "original": "Bonjour et bonne journée!",
-    "translation": "Good morning and have a goo day!"
+    "translation": "Good morning and have a good day!"
 },
 {
     "original": "Je ne comprends pas.",
@@ -180,7 +180,7 @@
 },
 {
     "original": "Il est 10 heures. Il est 19h30.",
-    "translation": "It's 10 o'clock. 7:30pm."
+    "translation": "It's 10 o'clock. It's 7:30pm."
 },
 {
     "original": "Il nous faut un médecin!",
@@ -216,4 +216,7 @@
 },{
     "original": "Quatre-vingts sont les nouvelles soixante-dix.",
     "translation": "Eighty is the new seventy."
+}, {
+    "original": "I have time. You had time.",
+    "translation": "J'ai du temps. Vous avez eu le temps."
 }]
