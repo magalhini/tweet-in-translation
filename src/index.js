@@ -54,6 +54,7 @@ const writePicture = (translation, size) =>
 const getRandomTranslation = data => new Promise((resolve, reject) => {
   const translation = data[Math.floor(Math.random() * data.length)];
 
+  // Never tweet the previous translation
   if (translation.original !== lastTweet.original) {
     lastTweet.original = translation.original;
     return resolve(translation);

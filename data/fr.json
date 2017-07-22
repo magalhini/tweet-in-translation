@@ -208,7 +208,7 @@
     "original": "Votre téléphone est tombé au sol.",
     "translation": "Your phone fell to the ground."
 },{
-    "original": "Peux-tu courrir",
+    "original": "Peux-tu courrir?",
     "translation": "Can you run?"
 },{
     "original": "Puis-je avoir de l'eau?",
@@ -216,7 +216,31 @@
 },{
     "original": "Quatre-vingts sont les nouvelles soixante-dix.",
     "translation": "Eighty is the new seventy."
-}, {
+},{
     "original": "I have time. You had time.",
     "translation": "J'ai du temps. Vous avez eu le temps."
+},{
+    "original": "Je suis bien. Tu connais Paris?",
+    "translation": "I am well. Do you know Paris?"
+},{
+    "original": "On visite la Tour Eiffel?",
+    "translation": "Are we visiting the Eiffel Tower?"
+},{
+    "original": "Pardon, tu êtes Madame Linda?",
+    "translation": "Excuse me, are you Miss Linda?"
+},{
+    "original": "I've made a mistake.",
+    "translation": "J'ai fait une erreur."
+},{
+    "original": "She's the daughter of my daughter.",
+    "translation": "Elle est la fille de ma fille."
+},{
+    "original": "I don't know how to say this.",
+    "translation": "Je ne sais pas comment dire ça."
+},{
+    "original": "No, but we love cheese, you too?",
+    "translation": "Non, mais nous aimons le frommage, vous aussi?"
+},{
+    "original": "We speak. You all speak. They speak.",
+    "translation": "Nous parlons. Vous parlez. Ills parlent."
 }]
